@@ -1,11 +1,11 @@
 <?php
 
-require_once ("app/controller/HomeController.php");
+require_once ("app/controller/ListCitiesController.php");
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 if (empty($_GET['action'])) {
-    $_GET['action'] = 'home';
+    $_GET['action'] = 'ciudades';
 }
 
 $action = $_GET['action'];
@@ -13,8 +13,8 @@ $action = $_GET['action'];
 $parametros = explode('/', $action);
 
 switch($parametros[0]) {
-    case 'home':
-        $controller = new HomeController();
-        $controller->mostrarHome();
+    case 'ciudades':
+        $controller = new ListCitiesController();
+        $controller->mostrarListadoCiudades();
         break;
 }
