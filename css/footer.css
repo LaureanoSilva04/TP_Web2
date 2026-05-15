@@ -1,0 +1,64 @@
+.main-footer {
+    background-color: #122333;
+    color: #ecf0f1;
+    padding: 3rem 0 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 50px;
+    border-top: 1px solid #34495e;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px 2rem 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    color: #f0a500;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.footer-description, .academic-info {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+.footer-section h3 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid #f0a500;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.contact-list li {
+    margin-bottom: 8px;
+    color: #bdc3c7;
+}
+
+.footer-bottom {
+    background-color: #0b1621;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    border-top: 1px solid #1a2a3a;
+}

@@ -13,6 +13,7 @@ class HomeController {
     }
 
     function mostrarListadoCiudades() {
-        $this->$view->viewListaCiudades();
+        $ciudades = $this->$model->getAll();
+        $this->$view->viewListaCiudades($ciudades);
     }
 }
