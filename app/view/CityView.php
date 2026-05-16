@@ -1,11 +1,11 @@
 <?php
 //TODO: falta que herede de View.php para que tenga toda la parte de seguridad implementada,
 // ademas de cosas como el nombre de la pagina
-class ListCitiesView {
+class CityView {
 
 
 
-    function viewListaCiudades($ciudades) {
+    function viewCities($ciudades) {
         require_once "templates/ciudades.phtml";
     }
 }
