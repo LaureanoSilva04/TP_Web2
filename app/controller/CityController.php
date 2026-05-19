@@ -1,5 +1,6 @@
 <?php
-
+//TODO: adaptar la pagina para que muestre los nuevos scripts, descripción y falta la parte de paises (categorias)
+require_once ("app/model/CityModel.php");
 require_once ("app/view/CityView.php");
 
 class CityController {
@@ -8,12 +9,17 @@ class CityController {
     private $view;
 
     function __construct() {
-        $this->$model = new CityModel();
-        $this->$view = new CityView();
+        $this->model = new CityModel();
+        $this->view = new CityView();
     }
 
     function showCities() {
-        $ciudades = $this->$model->getAll();
-        $this->$view->viewCities($ciudades);
+        $cities = $this->model->getAll();
+        $this->view->viewCities($cities);
+    }
+
+    function showCity($id) {
+        $city = $this->model->get($id);
+        $this->view->viewCity($city);
     }
 }

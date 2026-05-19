@@ -1,0 +1,61 @@
+<?php
+require ("templates/head.phtml");
+require ("templates/header.phtml");
+?>
+
+<main class="container-detail">
+    <div class="detail-panel">
+        <div class="panel-header">
+            <h2>Ficha Completa del Registro Informativo</h2>
+        </div>
+        
+        <div class="detail-description">
+            <p><?= htmlspecialchars($city->descripcion) ?></p>
+        </div>
+
+        <div class="panel-body">
+            <div class="detail-row">
+                <span class="detail-label">Nombre oficial del destino:</span>
+                <span class="detail-value font-highlight"><?= htmlspecialchars($city->nombre) ?></span>
+            </div>
+
+            <div class="detail-row">
+                <span class="detail-label">Clasificación Geopolítica:</span>
+                <span class="detail-value">
+                    <?php if ($city->es_capital == 1): ?>
+                        <span class="badge-detail badge-capital-si">Capital de la Nación</span>
+                    <?php else: ?>
+                        <span class="badge-detail badge-capital-no">Ciudad Regional / Provincia</span>
+                    <?php endif; ?>
+                </span>
+            </div>
+
+            <div class="detail-row">
+                <span class="detail-label">Sitios turísticos de interés:</span>
+                <span class="detail-value">
+                    <strong><?= htmlspecialchars($city->sitios_turisticos) ?> atracciones</strong> verificadas y cargadas en el mapa global.
+                </span>
+            </div>
+
+            <div class="detail-row">
+                <span class="detail-label">Cultura y costumbres regionales:</span>
+                <span class="detail-value">
+                    <?php if ($city->toman_mate == 1): ?>
+                        <span class="badge-detail badge-mate-si">Hábito de tomar mate incorporado</span>
+                    <?php else: ?>
+                        <span class="badge-detail badge-mate-no">Sin registro de tradición matera</span>
+                    <?php endif; ?>
+                </span>
+            </div>
+
+            <div class="detail-row">
+                <span class="detail-label">País de pertenencia:</span>
+                <span class="detail-value"><?= htmlspecialchars($city->nombre_pais) ?></span>
+            </div>
+        </div>
+    </div>
+</main>
+
+<?php
+require ("templates/footer.phtml");
+?>

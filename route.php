@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once ("app/controller/CityController.php");
 
@@ -17,4 +20,7 @@ switch($parametros[0]) {
         $controller = new CityController();
         $controller->showCities();
         break;
+    case 'ciudad':
+        $controller = new CityController();
+        $controller->showCity($parametros[1]);
 }

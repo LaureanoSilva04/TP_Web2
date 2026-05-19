@@ -6,6 +6,10 @@ class CityView {
 
 
     function viewCities($ciudades) {
-        require_once "templates/ciudades.phtml";
+        require_once ("templates/ciudades.phtml");
+    }
+
+    function viewCity($city) {
+        require_once ("templates/ciudad.phtml");
     }
 }

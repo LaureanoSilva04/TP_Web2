@@ -6,4 +6,4 @@
     $configuracion['host']       = 'localhost';
     $configuracion['usuario']    = 'root';
     $configuracion['password']   = '';
-    $configuracion['basenombre'] = 'tursimo_db';
+    $configuracion['basenombre'] = 'turismo_db';

@@ -1,18 +1,35 @@
 <?php
-require ("templates/head.phtml"); 
-require ("templates/header.phtml"); 
+require ("templates/head.phtml");
+require ("templates/header.phtml");
 ?>
 
-<body>
-    <?php
-    foreach ($ciudades as $c) {?>
+<main class="container-list">
+    <h1 class="section-title">Destinos Disponibles</h1>
+    <p class="section-subtitle">Explorá nuestro catálogo de ciudades internacionales administradas.</p>
 
-        <h5><?=$c->nombre?></h5>
-        <p><?=$c->sitios_turisticos?></p>
-<?php } ?>
+    <div class="cities-grid">
+        <?php foreach ($ciudades as $c) { ?>
+            <article class="city-card">
+                <div class="city-card-body">
+                    <h5 class="city-name"><?= $c->nombre ?></h5>
+      
+                    <div class="btn-group"> <a href="ciudad/<?=$c->id_ciudad ?>" class="btn-view">Ver más</a>
+                        <!--TODO: los siguientes botones deben tener una cap de seguridad -->
+                        <a href="ciudad/<?=$c->id_ciudad ?>" class="btn-delete">Quitar</a>
+                        <a href="ciudad/<?=$c->id_ciudad ?>" class="btn-edit">Modificar</a>
+                    </div>
 
-</body>
+                    <div class="badge-container">
+                        <?php if ($c->toman_mate == 1): ?>
+                            <span class="badge badge-info">Toman Mate</span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </article>
+        <?php } ?>
+    </div>
+</main>
 
 <?php
-require("templates/footer.phtml");
+require ("templates/footer.phtml");
 ?>
