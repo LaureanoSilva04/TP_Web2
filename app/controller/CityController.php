@@ -1,5 +1,4 @@
 <?php
-//TODO: adaptar la pagina para que muestre los nuevos scripts, descripción y falta la parte de paises (categorias)
 require_once ("app/model/CityModel.php");
 require_once ("app/view/CityView.php");
 

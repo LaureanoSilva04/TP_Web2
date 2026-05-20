@@ -1,8 +1,10 @@
 <?php
+//esto es para que muestre los errores en el browser
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once ("app/controller/CountryController.php");
 require_once ("app/controller/CityController.php");
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -23,4 +25,9 @@ switch($parametros[0]) {
     case 'ciudad':
         $controller = new CityController();
         $controller->showCity($parametros[1]);
+        break;
+    case 'paises':
+        $controller = new CountryController();
+        $controller->showCountries();
+        break;
 }

@@ -1,0 +1,36 @@
+<?php
+require ("templates/head.phtml");
+require ("templates/header.phtml");
+?>
+
+<main class="container-list">
+    <h1 class="section-title">Países Administrados</h1>
+    <p class="section-subtitle">Explorá nuestro catálogo de países y regiones internacionales.</p>
+
+    <div class="countries-grid">
+        <?php foreach ($countries as $c) { ?>
+            <article class="country-card">
+                <div class="country-card-body">
+                    <h5 class="country-name"><?= htmlspecialchars($c->nombre) ?></h5>
+      
+                    <div class="btn-group">
+                        <a href="pais/<?=$c->id_pais ?>" class="btn-view">Ver más</a>
+                        <!--TODO: a estos botones también es necesario agregarles una capa de seguridad -->
+                        <a href="quitar_pais/<?=$c->id_pais ?>" class="btn-delete">Quitar</a>
+                        <a href="modificar_pais/<?=$c->id_pais ?>" class="btn-edit">Modificar</a>
+                    </div>
+
+                    <div class="badge-container">
+                        <?php if ($c->es_futbolero == 1): ?>
+                            <span class="badge badge-success">País Futbolero</span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </article>
+        <?php } ?>
+    </div>
+</main>
+
+<?php
+require ("templates/footer.phtml");
+?>

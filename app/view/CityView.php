@@ -3,8 +3,6 @@
 // ademas de cosas como el nombre de la pagina
 class CityView {
 
-
-
     function viewCities($ciudades) {
         require_once ("templates/ciudades.phtml");
     }
